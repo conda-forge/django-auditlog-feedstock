@@ -1,18 +1,18 @@
 {% set name = "django-auditlog" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-auditlog-{{ version }}.tar.gz
-  sha256: 9de49f80a4911135d136017123cd73461f869b4947eec14d5e76db4b88182f3f
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 435345b4055d16abfb4ada4bf11320f9e2f6d343874464471fa0041f13f3a474
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,8 +21,9 @@ requirements:
     - pip
     - setuptools
   run:
+    - freezegun
     - python >={{ python_min }}
-    - django >=3.2
+    - django >=4.2
     - python-dateutil >=2.7.0
 
 test:
