@@ -1,5 +1,5 @@
 {% set name = "django-auditlog" %}
-{% set version = "3.1.2" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 435345b4055d16abfb4ada4bf11320f9e2f6d343874464471fa0041f13f3a474
+  sha256: 66cf3945977ba60e0687fc264ac178f0c7b0eee013f25e1c63561d8ceb6a5c41
 
 build:
   noarch: python
